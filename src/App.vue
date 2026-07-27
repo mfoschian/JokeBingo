@@ -1,6 +1,10 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue';
 
+
+const forced_name = new URLSearchParams(location.search)?.get('d');
+
+
 const DEFAULT_DATASET = 'default';
 const DEFAULT_CARD = {
 	title: null,
@@ -39,7 +43,11 @@ async function fetchDataset(name) {
 	const file = name ?? 'default';
 	let dataset = {};
 	try {
-		let txt = (await fetch(`/sentences/${file}.txt`)).text();
+		let res = await fetch(`/sentences/${file}.txt`);
+		if( !res.ok )
+			throw (res.status + ' ' +res.statusText);
+
+		let txt = res.text();
 		let lines = (await txt).split('\n').map(line => line.trim())
 			.filter(line => line.length > 0 && !line.startsWith('#'));
 
@@ -56,8 +64,7 @@ async function fetchDataset(name) {
 		dataset = { directives, sentences };
 	}
 	catch (err) {
-		console.error(err);
-		dataset.error = err;
+		setError(err);
 	}
 
 	return dataset;
@@ -105,7 +112,7 @@ async function loadData() {
 async function readCardData() {
 	try {
 		// Get last used dataset name
-		let dataset_name = window.localStorage.getItem('last_dataset') ?? DEFAULT_DATASET;
+		let dataset_name = forced_name ?? window.localStorage.getItem('last_dataset') ?? DEFAULT_DATASET;
 		const text = window.localStorage.getItem('card_' + dataset_name );
 		let c = null;
 		if(text) {
@@ -121,7 +128,7 @@ async function readCardData() {
 
 async function writeCardData(name, data) {
 	try {
-		const dataset_name = name ?? 'default';
+		const dataset_name = forced_name ?? name ?? 'default';
 		window.localStorage.setItem('last_dataset', dataset_name);
 		window.localStorage.setItem('card_'+ dataset_name, JSON.stringify(data));
 	}
@@ -138,7 +145,7 @@ async function changeCard() {
 
 async function clearCardData() {
 	try {
-		let dataset_name = window.localStorage.getItem('last_dataset') ?? DEFAULT_DATASET;
+		let dataset_name = forced_name ?? window.localStorage.getItem('last_dataset') ?? DEFAULT_DATASET;
 		window.localStorage.removeItem('card_' + dataset_name );
 		window.localStorage.removeItem('last_dataset');
 		await loadData();
