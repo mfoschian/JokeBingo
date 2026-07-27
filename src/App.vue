@@ -43,7 +43,7 @@ async function fetchDataset(name) {
 	const file = name ?? 'default';
 	let dataset = {};
 	try {
-		let res = await fetch(`/sentences/${file}.txt`);
+		let res = await fetch(`sentences/${file}.txt`);
 		if( !res.ok )
 			throw (res.status + ' ' +res.statusText);
 
