@@ -12,7 +12,7 @@ const DEFAULT_CARD = {
 	guessed: []
 };
 
-const CARD_LENGTH = 5;
+const DEFAULT_CARD_LENGTH = 5;
 
 let last_dataset = ref(DEFAULT_DATASET);
 let card = ref({});
@@ -92,7 +92,7 @@ async function loadData() {
 	if( !c.sentences || c.sentences.length == 0 ) {
 		// Load sentences
 		const dataset = await fetchDataset(dataset_name);
-		card.value.sentences = randomChoose(dataset.sentences, CARD_LENGTH);
+		card.value.sentences = randomChoose(dataset.sentences, dataset?.directives?.itemstowin ?? DEFAULT_CARD_LENGTH);
 		card.value.guessed = [];
 		card.value.title = dataset?.directives?.title ?? null;
 	}

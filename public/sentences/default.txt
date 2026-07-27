@@ -1,13 +1,27 @@
-Questa è una frase di prova
-# Questo è un commento
-@title : Test
-Seconda frase
+@title : Riunione-noiosa
+@itemsToWin: 7
+# Questo è un commento, la riga viene ignorata.
+# '#' deve essere il primo carattere.
+# Anche le linee vuote o di soli spazi vengono ignorate
 
-111
-444
-555
-666
-777
-888
-999
-1101010
+Quant'altro
+Intelligenza Artificiale / IA / AI
+Occasione di crescita
+Best practice
+Core Business
+Proattivi, non reattivi
+Sinergie
+Piano strategico
+Non ci sono problemi, solo opportunità
+Sostenibilità
+Asap
+Sei mutato
+Qualcuno ha il microfono acceso
+Quote rosa
+Gamification
+Agenda 2030
+Problemi di privacy
+Devo lasciarvi perché ho un'altra call
+Out of the box
+Abbiamo finito il budget
+Resilienza
