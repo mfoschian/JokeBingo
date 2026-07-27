@@ -176,6 +176,8 @@ onMounted( loadData );
 			<pre>
 				{{ error }}
 			</pre>
+			<hr>
+			<button @click="clearCardData()">Resetta e riprova</button>
 		</div>
 	</template>
 	<template v-if="status == STATUS.LOADING">
