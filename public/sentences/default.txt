@@ -1,5 +1,6 @@
 @title : Riunione-noiosa
 @itemsToWin: 7
+@instructions: Ascolta cosa viene detto in riunione e segna fra le frasi seguenti quelle che senti. Chi segna tutte le frasi vince !!!!
 # Questo è un commento, la riga viene ignorata.
 # '#' deve essere il primo carattere.
 # Anche le linee vuote o di soli spazi vengono ignorate
