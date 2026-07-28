@@ -1,0 +1,33 @@
+# Direttive
+@title: FlyFox
+@itemsToWin: 5
+@instructions: Ascolta cosa dice Fly e segna fra le frasi seguenti quelle che senti. Chi segna tutte le frasi vince !!!!
+
+# Questo è un commento, la riga viene ignorata. '#' deve essere il primo carattere.
+# Anche le linee vuote o di soli spazi vengono ignorate
+
+# In generale
+..ma sì, perché cos'te vol...
+i xe rivadi !
+No sta bazilar
+
+# Enogastronomia
+Un bicer che no fa mai mal
+Chi me passa el vin ?
+Ma che BON che xe !
+
+# Cani e animali
+Dove xe i cani ?
+No ste baiar !
+Ma che cocola che xe Lola
+
+# Autostima
+Ah, che mona che son... hi, hi
+Go pensado una roba che se podesi far
+
+# Viaggi e geografia
+Volesi andar... ma no go nisun che vegni con mi...
+
+# Gli altri
+E lori i ridi...
+Te conosi (un nome a caso), no ?
